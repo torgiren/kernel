@@ -67,20 +67,52 @@
 \begin{frame}
 	\frametitle{Podstawy podstaw}
 	\begin{description}[<+->]
-		\item[i] Przejście do trybu wprowadzania
-		\item[ESC] Wyjście z trybu wprowadzania
-		\item[:q] Wyjście z VIMa
-		\item[:w] Zapisanie zmian
-		\item[:w plik] Zapisanie zmian do \textit{plik}
-		\item[:q!] Wyjście z VIMa bez zapisywania zmian
+		\item[ESC] Wyjście z trybu wprowadzania/anulowanie polecenia
+		\item[:q / :quit] Wyjście z VIMa
+		\item[:w / :write] Zapisanie zmian
+		\item[:w plik / :write plik] Zapisanie zmian do \textit{plik}
+		\item[:q! / :quit!] Wyjście z VIMa bez zapisywania zmian
 		\item[:wq] Zapisanie i wyście
+		\item[:o plik / :open plik] Otworzenie pliku \textit{plik}
 		\item \begin{block}{Zapobieganie utracie dancyh}
 			W przypadku dokonania zmian w pliku, \textit{:q} nie pozwoli nam opuścić VIMa. Należy zapisać zmiany - \textit{:w}, bądź wymusić wyjście bez zapisywanie - \textit{:q!}	
 			\end{block}
 	\end{description}
 \end{frame}
-
-\section{Koniec}
+\begin{frame}
+	\frametitle{Poruszanie się}
+	\begin{description}[<+->]
+		\item[h,j,k,l] Poruszanie kursorem
+		\item[u] Undo, cofnięcie zmian
+		\item[ctrl+r] Redo, cofnięcie cofnięcia :P	
+		\item[i,a,A,o,O] Przejście do trybu wstawiania
+		\item[/test] Wyszukiwanie w teksie frazy \textit{test}. Szukanie w przód
+		\item[?test] Wyszukiwanie w tekscie frazy \textit{test}. Szukanie wstecz
+		\item[n] Przejście do kolejnego wystąpienia szukanej frazy
+		\item[w] Przejście na początek kolejnego słowa
+		\item[e] Przejście na koniec kolejnego słowa
+		\item[b] Przejście na początek poprzedniego słowa
+%		\item[\^] Przejście na początek linii
+		\item[\$] Przejście na koniec linii
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Wstawianie}
+	\begin{description}[<+->]
+	\item[i] Wstawianie przed kursorem
+	\item[a] Wstawianie po kursorze
+	\item[o] Wstawianie nowej linii poniżej aktualnej
+	\item[O] Wstawianie nowej linii powyżej aktualnej
+	\item[I] Wstawianie na początku linii
+	\item[A] Wstawianie na końcu linii
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Usuwanie}
+	\begin{description}[<+->]
+		\item[x] Usunięcie znaku z pod kursora
+	\end{description}
+\end{frame}
 \begin{frame}
 	Dziękuję za uwagę
 \end{frame}
