@@ -83,9 +83,6 @@
 	\frametitle{Poruszanie się}
 	\begin{description}[<+->]
 		\item[h,j,k,l] Poruszanie kursorem
-		\item[u] Undo, cofnięcie zmian
-		\item[ctrl+r] Redo, cofnięcie cofnięcia :P	
-		\item[i,a,A,o,O] Przejście do trybu wstawiania
 		\item[/test] Wyszukiwanie w teksie frazy \textit{test}. Szukanie w przód
 		\item[?test] Wyszukiwanie w tekscie frazy \textit{test}. Szukanie wstecz
 		\item[n] Przejście do kolejnego wystąpienia szukanej frazy
@@ -94,6 +91,10 @@
 		\item[b] Przejście na początek poprzedniego słowa
 %		\item[\^] Przejście na początek linii
 		\item[\$] Przejście na koniec linii
+		\item[gg] Przejście na początek pliku
+		\item[G] Przejście na koniec pliku
+		\item[u] Undo, cofnięcie zmian
+		\item[ctrl+r] Redo, cofnięcie cofnięcia :P	
 	\end{description}
 \end{frame}
 \begin{frame}
@@ -105,6 +106,7 @@
 	\item[O] Wstawianie nowej linii powyżej aktualnej
 	\item[I] Wstawianie na początku linii
 	\item[A] Wstawianie na końcu linii
+	\item[R] Wejście w tryb zastępowania
 	\end{description}
 \end{frame}
 \begin{frame}
@@ -112,12 +114,25 @@
 	\begin{description}[<+->]
 		\item[dd] Usunięcie linii
 		\item[dw] Usunięcie wyrazu od kursora do jego końca
-		\item[db] Usunięcie wyrazy od jego początku do kursora
+		\item[db] Usunięcie wyrazu od jego początku do kursora
 		\item[d\$] Usunięcie od kursora do końca linii
 		%\item[d\^] Usunięcie od początku linii do kursora
 		\item[dh] Usunięcie znaku na lewo od kursora
 		\item[dl] Usunięcie znaku pod kursorem
 		\item[x] Usunięcie znaku pod kursorem
+		\item[dgg] Usunięcie od początku pliku do kursora
+		\item[dG] Usunięcie od kursora do końca pliku
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Zastępowanie}
+	\begin{description}[<+->]
+		\item[cw] Usunięcie od kursora do końca wyrazu i przejście w tryb wstawiania
+		\item[cb] ...
+		\item[c\$] Usunięcie do kursora do końca linii i przejście w tryb wprowadzania
+	%	\item[c\^] ...
+		\item[dgg] ...
+		\item[dG] ...
 	\end{description}
 \end{frame}
 \begin{frame}
