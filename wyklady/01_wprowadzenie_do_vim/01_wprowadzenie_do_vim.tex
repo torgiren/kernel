@@ -213,40 +213,62 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Metody zwijania - ręczna}
-	\begin{block}{tworzenie}<1->
+	\begin{block}{włączenie}<1->
+	:set foldmethod=manual
+	\end{block}
+	\begin{block}{tworzenie}<2->
 	zf num
 	\end{block}
-	\begin{block}{usuwanie}<2->
+	\begin{block}{usuwanie}<3->
 	zd
 	\end{block}
-	\begin{block}{usuwanie recursywne}<3->
+	\begin{block}{usuwanie recursywne}<4->
 	zD
 	\end{block}
-	\uncover<4->
+	\uncover<5->
 	{
 		Demonstracja...
 	}
 \end{frame}
 \begin{frame}
 	\frametitle{Metody zwijania - markerami}
-	\begin{block}{tworzenie}<1->
+	\begin{block}{włączenie}<1->
+	:set foldmethod=marker
+	\end{block}
+	\begin{block}{tworzenie}<2->
 	\{\{\{ oraz \}\}\}
 	\end{block}
-	\begin{block}{tworzenie alt.}<2->
+	\begin{block}{tworzenie alt.}<3->
 	\{\{\{num oraz \}\}\}num
 	\end{block}
-	\begin{block}{tworzenie alt.2}<3->
+	\begin{block}{tworzenie alt.2}<4->
 	zf num
 	\end{block}
-	\begin{block}{usuwanie}<4->
+	\begin{block}{usuwanie}<5->
 	usuwamy znaczniki
 	\end{block}
-	\begin{block}{usuwanie alt.}<5->
+	\begin{block}{usuwanie alt.}<6->
 	zd
 	\end{block}
-	\uncover<6->
+	\uncover<7->
 	{
 		Demonstracja...
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - wcięcia}
+	\begin{block}{włączanie}<1->
+	:set foldmethod=indent
+	\end{block}
+	\begin{block}{tworzenie}<2->
+	nie możemy tworzyć
+	\end{block}
+	\begin{block}{usuwanie}<3->
+	nie możemy usuwać
+	\end{block}
+	\uncover<4->
+	{
+		Demonstracja...}
 	}
 \end{frame}
 \begin{frame}
