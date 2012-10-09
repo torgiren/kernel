@@ -338,10 +338,54 @@
 \subsection{Bufory - czyli co dwa pliki to nie jeden}
 \begin{frame}
 	\frametitle{Bufory}
-	\uncover<1->
-	{
-		Każdy nowo otwarty plik jest ładowany do bufora
-	}
+	\begin{itemize}[<+->]
+		\item każdy plik jest reprezentowany przez bufor
+		\item nie musimy wpisywać za każdym razem całej ścieżki
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Bufory - zarządzanie}
+	\begin{block}{:open plik}<+->
+		\begin{itemize}
+			\item utworzenie buforu
+			\item schowanie aktualnego
+			\item wyświetlenie nowego buforu
+		\end{itemize}
+	\end{block}
+	\begin{block}{:badd plik}<+->
+		\begin{itemize}
+			\item utworzenie buforu
+		\end{itemize}
+	\end{block}
+	\begin{block}{:bdelete bufor}<+->
+		\begin{itemize}
+			\item jeśli aktualny: przełącz na następny
+			\item usuń wybrany bufor
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Bufory - poruszanie się}
+	\begin{block}{:buffers}<+->
+		lista buforów
+	\end{block}
+	\begin{block}{:buffer \textit{bufor}}<+->
+		przełączenie na bufor \textit{bufor}
+	\end{block}
+	\begin{block}{:bfirst}<+->
+		przełączenie na pierwszy bufor z~listy
+	\end{block}
+	\begin{block}{:blast}<+->
+		przełączenie na ostatni bufor z~listy
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{block}{:bnext}<+->
+		przełączenie na następny bufor
+	\end{block}
+	\begin{block}{:bprev}<+->
+		przełączenie na poprzedni bufor
+	\end{block}
 \end{frame}
 \begin{frame}
 	Dziękuję za uwagę
