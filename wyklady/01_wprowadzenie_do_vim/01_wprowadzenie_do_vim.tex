@@ -32,7 +32,7 @@
 	\end{itemize}
 \end{frame}
 
-\section[Podstawy podstaw]{Podstawy podstaw - czyli od której strony podejść do VIMa}
+\section[Podstawy podstaw]{Podstawy podstaw - czyli jak to ugryźć}
 \subsection{Wejście i wyjście z VIMa}
 \begin{frame}
 	\frametitle{Wejście i wyjście z VIMa}
@@ -335,9 +335,9 @@
 	\end{block}
 \end{frame}
 \section{Średniozaawansowane możliwości - czyli druga fala uwielbienia}
-\subsection{Bufory - czyli co dwa pliki to nie jeden}
+\subsection{Bufory - czyli wszystko pod ręką}
 \begin{frame}
-	\frametitle{Bufory}
+	\frametitle{Bufory - czyli wszystko pod ręką}
 	\begin{itemize}[<+->]
 		\item każdy plik jest reprezentowany przez bufor
 		\item nie musimy wpisywać za każdym razem całej ścieżki
@@ -385,6 +385,63 @@
 	\end{block}
 	\begin{block}{:bprev}<+->
 		przełączenie na poprzedni bufor
+	\end{block}
+\end{frame}
+\subsection{Okna - czyli co dwa pliki to nie jeden}
+\begin{frame}
+	\frametitle{Okna - czyli co dwa pliki to nie jeden}
+	\begin{block}{tworzenie nowego okna}<2->
+		CTRL+w n
+	\end{block}
+	\begin{block}{tworzenie nowego okna z~buforem z~aktywnego okna}<3->
+		CTRL+w s\\
+		CTRL+w v
+	\end{block}
+	\begin{block}{zamykanie okna}<4->
+		CTRL+w q\\
+		:q
+	\end{block}
+	\begin{block}{zamykanie wszystkich innych okien}<5->
+		CTRL+w o
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - obsługa}
+	\begin{block}{przechodzenie między oknami}<1->
+		CTRL+w h/j/k/l\\
+		CTRL+w \textit{strzałki}
+	\end{block}
+	\begin{block}{zmiana rozmiaru okna w~poziomie}<2->
+		CTRL+w \textless\\
+		CTRL+w \textgreater
+	\end{block}
+	\begin{block}{zmiana rozmiaru okna w~pionie}<3->
+		CTRL+w +\\
+		CTRL+w -
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - obsługa c.d.}
+	\begin{block}{przenoszenie okien na skrajne pozycje}<1->
+		CTRL+w H/J/K/L
+	\end{block}
+	\begin{block}{rotacja w~prawo/dół}<2->
+		CTRL+w r
+	\end{block}
+	\begin{block}{rotacja w~lewo/górę}<3->
+		CTRL+w R
+	\end{block}
+	\begin{block}{zamiana dwóch okien}<4->
+		CTRL+w x
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - najlepsze na koniec}
+	\begin{block}{otwieranie okna z~pliku pod kursorem}<1->
+	CTRL+w f
+	\end{block}
+	\begin{block}{otwieranie okna z~elementem spod kursora}<2->
+	CTRL+w ]
 	\end{block}
 \end{frame}
 \begin{frame}
