@@ -151,9 +151,49 @@
 	\end{enumerate}
 \end{frame}
 \section{Podstawowe możliwości - czyli za co go lubimy}
-\subsection{Kolorowanie składni}
+\subsection{Dopełnianie - czyli Vim wie o~co Ci chodzi}
 \begin{frame}
-	\frametitle{Kolorowanie składni - czyli widzimy co mamy zanim to przeczytamy}
+	\frametitle{Dopełnianie - czyli Vim wie o~co Ci chodzi}
+	Vim ma możliwość dopełniać:
+	\begin{itemize}[<+->]
+		\item nazwy funkcji i zmiennych
+		\item całe linie
+		\item słowa ze słownika
+		\item nazwy plików z~dysku
+	\end{itemize}
+	\uncover<5->
+	{
+		Domyślnie przeszukuje bufory i~załączone pliki
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Dopełnianie - obsługa}
+	\begin{block}{dopełnianie funkcji}<1->
+		CTRL+n
+	\end{block}
+	\begin{block}{dopełnianie linii}<2->
+		CTRL+x CTRL+l
+	\end{block}
+	\begin{block}{dopełnianie słów}<3->
+		CTRL+x CTRL+k
+	\end{block}
+	\begin{block}{dopełnianie nazw plików}<4->
+		CTRL+x CTRL+f
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Dopełnianie - obsługa c.d.}
+	\begin{block}{poruszanie się}<1->
+		CTRL+n\\
+		CTRL+p
+	\end{block}
+	\begin{block}{wybór podpowiedzi}<2->
+		CTRL+y
+	\end{block}
+\end{frame}
+\subsection{Kolorowanie składni - czyli różowo mi}
+\begin{frame}
+	\frametitle{Kolorowanie składni - czyli różowo mi}
 	\uncover<1->
 	{
 		VIM potrafi kolorować składnię.
