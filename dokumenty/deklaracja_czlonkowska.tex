@@ -1,40 +1,51 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper, landscape, border shrink=5mm]
+\pgfpageslogicalpageoptions{1}{}
+\pgfpageslogicalpageoptions{2}{}
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{fullpage}
 \pagestyle{empty}
+\newcommand{\deklaracja}
+{
+	\begin{flushright}
+		\includegraphics[width=0.4\textwidth]{./../logo}
+	\end{flushright}
+	\vspace{-50pt}
+	Kraków, dn. \ldots\ldots\ldots 20.. r.\\
+	\begin{center}
+	\vspace{50pt}
+	\Large{\textbf{Deklaracja członkowska}}
+	\end{center}
+	\vspace{20pt}
+	Proszę o~przyjęcie mnie do Koła Naukowego ``Kernel''.\\
+	Oświadczam, że zapoznał(em/am)* się ze Statutem Koła i~zobowiązuje się do jego przestrzegania.\\
+
+	\vspace{10pt}
+	\textit{Wyrażam/nie wyrażam}* zgody na umieszczenie mojego imienia i~nazwiska na stronie internetowej Koła\\
+
+	\footnotesize{Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w~mojej deklaracji członkowskiej dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z~Ustawą z~dnia 28.08.1997 roku o~Ochronie Danych Osobowych Dz. Ust. Nr~133 poz. 883)}\\
+
+	\vspace{30pt}
+	\begin{center}
+	\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
+	\footnotesize{(imię i~nazwisko, drukowanymi literami)}\\
+	\vspace{40pt}
+	\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
+	\footnotesize{(adres kontaktowy email, drukowanymi literami)}\\
+	\vspace{40pt}
+	\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
+	\footnotesize{(podpis)}
+	\end{center}
+	\vspace{50pt}
+	\footnotesize{*niepotrzebne skreślić}
+	\normalsize
+}
 \begin{document}
-\begin{flushright}
-	\includegraphics[width=0.4\textwidth]{./../logo}
-\end{flushright}
-\vspace{-50pt}
-Kraków, dn. \ldots\ldots\ldots 20.. r.\\
-\begin{center}
-\vspace{50pt}
-\Large{\textbf{Deklaracja członkowska}}
-\end{center}
-\vspace{20pt}
-Proszę o~przyjęcie mnie do Koła Naukowego ``Kernel''.\\
-Oświadczam, że zapoznał(em/am)* się ze Statutem Koła i~zobowiązuje się do jego przestrzegania.\\
-
-\vspace{10pt}
-\textit{Wyrażam/nie wyrażam}* zgody na umieszczenie mojego imienia i~nazwiska na stronie internetowej Koła\\
-
-\footnotesize{Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w~mojej deklaracji członkowskiej dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z~Ustawą z~dnia 28.08.1997 roku o~Ochronie Danych Osobowych Dz. Ust. Nr~133 poz. 883)}\\
-
-\vspace{30pt}
-\begin{center}
-\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-\footnotesize{(imię i~nazwisko, drukowanymi literami)}\\
-\vspace{40pt}
-\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-\footnotesize{(adres kontaktowy email, drukowanymi literami)}\\
-\vspace{40pt}
-\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-\footnotesize{(podpis)}
-\end{center}
-\vspace{50pt}
-\footnotesize{*niepotrzebne skreślić}
+\deklaracja
+\newpage
+\deklaracja
 \end{document}
