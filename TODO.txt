@@ -1,0 +1,5 @@
+Wykłady:
+	Wstęp do VIM
+Deklaracje członkowskie
+Deklaracje aktywności
+Prezentacja koła

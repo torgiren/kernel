@@ -1,0 +1,573 @@
+\documentclass[10pt]{beamer}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\setbeamercovered{transparent}
+\author{Marcin TORGiren Fabrykowski}
+\title{Wprowadzenie do VIMa}
+\institute{AGH - University of Science and Technology}
+%\usetheme{Frankfurt}
+%\usetheme{Copenhagen}
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{O czym będziemy mówić...}
+	\tableofcontents
+\end{frame}
+\section{Co to jest VIM?}
+\begin{frame}
+	\frametitle{Co to jest?}
+	\begin{itemize}[<+->]
+		\item Czym jest VIM?
+		\begin{block}{Vim}
+			Edytor tekstu
+		\end{block}
+		\item A co z Officem?
+		\begin{block}{... Office}
+			Procesor tekstu
+		\end{block}
+	\end{itemize}
+\end{frame}
+
+\section[Podstawy podstaw]{Podstawy podstaw - czyli jak to ugryźć}
+\subsection{Wejście i wyjście z VIMa}
+\begin{frame}
+	\frametitle{Wejście i wyjście z VIMa}
+	\begin{itemize}
+		\item<1-> Jak włączyć VIMa?
+		\begin{block}{Włączenie VIMa}<2->
+		vim
+		\end{block}
+		\item<3-> Jak wyłączyć VIMa?
+		\onslide<4->{ ...ale bez generowania losowego ciągu znaków?}
+		\begin{block}{Wyłączenie VIMa}<5->
+		:q
+		\end{block}
+	\end{itemize}
+
+\end{frame}
+\subsection{Tryby w VIMie}
+\begin{frame}
+	\frametitle{Tryby w VIMie}
+	\begin{itemize}[<+->]
+		\item A co jeśli byśmy chcieli wpisać \textit{:q} do pliku?
+		\item Dwa tryby pracy:
+			\begin{enumerate}
+			\item normalny
+			\item wstawiania
+			\end{enumerate}
+		\item Polecenia działają w trybie normalnym
+		\begin{block}{Przejscie do tryby normalnego}
+			ESC
+		\end{block}
+		\item Tryb wprowadzania służy do wprowadzania :)
+	\end{itemize}
+\end{frame}
+\subsection{Podstawowe polecenia}
+\begin{frame}
+	\frametitle{Podstawy podstaw}
+	\begin{description}[<+->]
+		\item[ESC] Wyjście z trybu wprowadzania/anulowanie polecenia
+		\item[:q / :quit] Wyjście z VIMa
+		\item[:w / :write] Zapisanie zmian
+		\item[:w plik / :write plik] Zapisanie zmian do \textit{plik}
+		\item[:q! / :quit!] Wyjście z VIMa bez zapisywania zmian
+		\item[:wq] Zapisanie i wyście
+		\item[:o plik / :open plik] Otworzenie pliku \textit{plik}
+		\item \begin{block}{Zapobieganie utracie dancyh}
+			W przypadku dokonania zmian w pliku, \textit{:q} nie pozwoli nam opuścić VIMa. Należy zapisać zmiany - \textit{:w}, bądź wymusić wyjście bez zapisywanie - \textit{:q!}	
+			\end{block}
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Poruszanie się}
+	\begin{description}[<+->]
+		\item[h,j,k,l] Poruszanie kursorem
+		\item[/test] Wyszukiwanie w teksie frazy \textit{test}. Szukanie w przód
+		\item[?test] Wyszukiwanie w tekscie frazy \textit{test}. Szukanie wstecz
+		\item[n] Przejście do kolejnego wystąpienia szukanej frazy
+		\item[w] Przejście na początek kolejnego słowa
+		\item[e] Przejście na koniec kolejnego słowa
+		\item[b] Przejście na początek poprzedniego słowa
+		\item[\textasciicircum] Przejście na początek linii
+		\item[\$] Przejście na koniec linii
+		\item[gg] Przejście na początek pliku
+		\item[G] Przejście na koniec pliku
+		\item[u] Undo, cofnięcie zmian
+		\item[ctrl+r] Redo, cofnięcie cofnięcia :P	
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Wstawianie}
+	\begin{description}[<+->]
+	\item[i] Wstawianie przed kursorem
+	\item[a] Wstawianie po kursorze
+	\item[o] Wstawianie nowej linii poniżej aktualnej
+	\item[O] Wstawianie nowej linii powyżej aktualnej
+	\item[I] Wstawianie na początku linii
+	\item[A] Wstawianie na końcu linii
+	\item[R] Wejście w tryb zastępowania
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Usuwanie}
+	\begin{description}[<+->]
+		\item[dd] Usunięcie linii
+		\item[dw] Usunięcie wyrazu od kursora do jego końca
+		\item[db] Usunięcie wyrazu od jego początku do kursora
+		\item[d\$] Usunięcie od kursora do końca linii
+		\item[d\textasciicircum] Usunięcie od początku linii do kursora
+		\item[dh] Usunięcie znaku na lewo od kursora
+		\item[dl] Usunięcie znaku pod kursorem
+		\item[x] Usunięcie znaku pod kursorem
+		\item[dgg] Usunięcie od początku pliku do kursora
+		\item[dG] Usunięcie od kursora do końca pliku
+	\end{description}
+\end{frame}
+\begin{frame}
+	\frametitle{Zastępowanie}
+	\begin{description}[<+->]
+		\item[cw] Usunięcie od kursora do końca wyrazu i przejście w tryb wstawiania
+		\item[cb] ...
+		\item[c\$] Usunięcie do kursora do końca linii i przejście w tryb wprowadzania
+		\item[c\textasciicircum] ...
+		\item[cgg] ...
+		\item[cG] ...
+	\end{description}
+\end{frame}
+\subsection{Podsumowanie}
+\begin{frame}
+	\frametitle{Podsumowanie}
+	\begin{enumerate}
+		\item [ESC] Przejście do trybu normalnego
+		\item [i] Przejście do trybu wprowadzania
+		\item [:w plik] Zapisanie zmian do pliku \textit{plik}
+		\item [:q] Wyjście z VIMa
+		\item [A] Dopisywanie na końcu lini
+		\item [u] Cofnięcie ostatniej akcji
+	\end{enumerate}
+\end{frame}
+\section{Podstawowe możliwości - czyli za co go lubimy}
+\subsection{Dopełnianie - czyli Vim wie o~co Ci chodzi}
+\begin{frame}
+	\frametitle{Dopełnianie - czyli Vim wie o~co Ci chodzi}
+	Vim ma możliwość dopełniać:
+	\begin{itemize}[<+->]
+		\item nazwy funkcji i zmiennych
+		\item całe linie
+		\item słowa ze słownika
+		\item nazwy plików z~dysku
+	\end{itemize}
+	\uncover<5->
+	{
+		Domyślnie przeszukuje bufory i~załączone pliki
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Dopełnianie - obsługa}
+	\begin{block}{dopełnianie funkcji}<1->
+		CTRL+n
+	\end{block}
+	\begin{block}{dopełnianie linii}<2->
+		CTRL+x CTRL+l
+	\end{block}
+	\begin{block}{dopełnianie słów}<3->
+		CTRL+x CTRL+k
+	\end{block}
+	\begin{block}{dopełnianie nazw plików}<4->
+		CTRL+x CTRL+f
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Dopełnianie - obsługa c.d.}
+	\begin{block}{poruszanie się}<1->
+		CTRL+n\\
+		CTRL+p
+	\end{block}
+	\begin{block}{wybór podpowiedzi}<2->
+		CTRL+y
+	\end{block}
+\end{frame}
+\subsection{Kolorowanie składni - czyli różowo mi}
+\begin{frame}
+	\frametitle{Kolorowanie składni - czyli różowo mi}
+	\uncover<1->
+	{
+		VIM potrafi kolorować składnię.
+	}
+	\uncover<2->
+	{
+		\begin{block}{włączenie}
+		:syntax on
+		\end{block}
+	}
+	\uncover<3->
+	{
+		\begin{block}{wyłączenie}
+		:syntax off
+		\end{block}
+	}
+	\uncover<4->
+	{
+		Czy to jest jakaś różnica?
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Bez kolorowania}
+	\includegraphics[width=\textwidth]{syntax_off.png}
+\end{frame}
+\begin{frame}
+	\frametitle{z kolorowaniem}
+	\includegraphics[width=\textwidth]{syntax_on.png}
+\end{frame}
+\begin{frame}
+	\frametitle{Rozpoznawane składnie}
+	\begin{enumerate}[<+->]
+	\item C/C++
+	\item Java
+	\item Python
+	\item \LaTeX
+	\item crontab
+	\item fstab
+	\item wiele innych...
+	\end{enumerate}
+\end{frame}
+\subsection{Foldowanie - czyli patrzymy tylko po łebkach}
+\begin{frame}
+	\frametitle{Foldowanie - czyli patrzymy tylko po łebkach}
+	\uncover<1->
+	{
+		Możemy zwijać funkcje, pętle itp\\
+	}
+	\uncover<2->
+	{
+		\begin{block}{kiedy zwijamy?}
+			Gdy chcemy mieć pogląd całości a nie zagłębiać się w szczegóły
+		\end{block}
+	}
+	\uncover<3->
+	{
+		Czy jest to potrzebne?
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - ręczna}
+	\begin{block}{włączenie}<1->
+	:set foldmethod=manual
+	\end{block}
+	\begin{block}{tworzenie}<2->
+	zf num
+	\end{block}
+	\begin{block}{usuwanie}<3->
+	zd
+	\end{block}
+	\begin{block}{usuwanie recursywne}<4->
+	zD
+	\end{block}
+	\uncover<5->
+	{
+		Demonstracja...
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - markerami}
+	\begin{block}{włączenie}<1->
+	:set foldmethod=marker
+	\end{block}
+	\begin{block}{tworzenie}<2->
+	\{\{\{ oraz \}\}\}
+	\end{block}
+	\begin{block}{tworzenie alt.}<3->
+	\{\{\{num oraz \}\}\}num
+	\end{block}
+	\begin{block}{tworzenie alt.2}<4->
+	zf num
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - markerami c.d.}
+	\begin{block}{usuwanie}<1->
+	usuwamy znaczniki
+	\end{block}
+	\begin{block}{usuwanie alt.}<2->
+	zd
+	\end{block}
+	\uncover<3->
+	{
+		Demonstracja...
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - wcięcia}
+	\begin{block}{włączanie}<1->
+	:set foldmethod=indent
+	\end{block}
+	\begin{block}{tworzenie}<2->
+	nie możemy tworzyć
+	\end{block}
+	\begin{block}{usuwanie}<3->
+	nie możemy usuwać
+	\end{block}
+	\uncover<4->
+	{
+		Demonstracja...
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Metody zwijania - składnia}
+	\begin{block}{włączanie}<1->
+	:set foldmethod=syntax
+	\end{block}
+	\begin{block}{tworzenie}<2->
+	nie możemy tworzyć
+	\end{block}
+	\begin{block}{usuwanie}<3->
+	nie możemy usuwać
+	\end{block}
+	\uncover<4->
+	{
+		Demonstracja...
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Poruszanie się po foldach}
+	\begin{block}{otwieranie}<1->
+	zo
+	\end{block}
+	\begin{block}{otwieranie całego bloku}<2->
+	zO
+	\end{block}
+	\begin{block}{otwieranie jednego poziomu}<3->
+	zr
+	\end{block}
+	\begin{block}{otwieranie wszystkiego}<4->
+	zR
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Poruszanie się po foldach c.d.}
+	\begin{block}{zamykanie}<1->
+	zc
+	\end{block}
+	\begin{block}{zamykanie całego bloku}<2->
+	zC
+	\end{block}
+	\begin{block}{zamykanie jednego poziomu}<3->
+	zm
+	\end{block}
+	\begin{block}{zamykanie wszystkiego}<4->
+	zM
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Poruszanie się po foldach c.d}
+	\begin{block}{toggle folda}<1->
+	za
+	\end{block}
+	\begin{block}{toggle folda całego bloku}<2->
+	zA
+	\end{block}
+	\begin{block}{ustawienie konkretnego poziomu}<3->
+	:set foldlevel=level
+	\end{block}
+\end{frame}
+\subsection{Spell checking - czyli nawet dyslektyk może pisać}
+\begin{frame}
+	\frametitle{Spell checking - czyli nawet dyslektyk może pisać}
+	\begin{itemize}[<+->]
+		\item Korzystanie z~zewnętrznych słowników
+		\item Dynamiczne podświetlanie błędnych wyrazów
+		\item Proponowanie wyrazów
+		\item Możliwość modyfikowania słownika
+		\item Wsparcie dla wielojęzyczności
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Spell checking - obsługa}
+	\begin{block}{włączenie}<1->
+		:set spell
+	\end{block}
+	\begin{block}{ustawienie języka}<2->
+		:set spelllang=\textit{język}	
+	\end{block}
+	\begin{block}{następny zły wyraz}<3->
+		]s
+	\end{block}
+	\begin{block}{poprzedni zły wyraz}<4->
+		[s
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Spell checking}
+	\begin{block}{propozycje słów}<1->
+		z=
+	\end{block}
+	\begin{block}{dodawanie słowa}<2->
+		zg
+	\end{block}
+	\begin{block}{zaznaczenie słowa jako niepoprawnego}<3->
+		zw
+	\end{block}
+	\begin{block}{cofnięcie zaznaczenia jako niepoprawne}<4->
+		zuw
+	\end{block}
+\end{frame}
+\section{Średniozaawansowane możliwości - czyli druga fala uwielbienia}
+\subsection{Bufory - czyli wszystko pod ręką}
+\begin{frame}
+	\frametitle{Bufory - czyli wszystko pod ręką}
+	\begin{itemize}[<+->]
+		\item każdy plik jest reprezentowany przez bufor
+		\item nie musimy wpisywać za każdym razem całej ścieżki
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Bufory - zarządzanie}
+	\begin{block}{:open plik}<+->
+		\begin{itemize}
+			\item utworzenie buforu
+			\item schowanie aktualnego
+			\item wyświetlenie nowego buforu
+		\end{itemize}
+	\end{block}
+	\begin{block}{:badd plik}<+->
+		\begin{itemize}
+			\item utworzenie buforu
+		\end{itemize}
+	\end{block}
+	\begin{block}{:bdelete bufor}<+->
+		\begin{itemize}
+			\item jeśli aktualny: przełącz na następny
+			\item usuń wybrany bufor
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Bufory - poruszanie się}
+	\begin{block}{:buffers}<+->
+		lista buforów
+	\end{block}
+	\begin{block}{:buffer \textit{bufor}}<+->
+		przełączenie na bufor \textit{bufor}
+	\end{block}
+	\begin{block}{:bfirst}<+->
+		przełączenie na pierwszy bufor z~listy
+	\end{block}
+	\begin{block}{:blast}<+->
+		przełączenie na ostatni bufor z~listy
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{block}{:bnext}<+->
+		przełączenie na następny bufor
+	\end{block}
+	\begin{block}{:bprev}<+->
+		przełączenie na poprzedni bufor
+	\end{block}
+\end{frame}
+\subsection{Okna - czyli co dwa pliki to nie jeden}
+\begin{frame}
+	\frametitle{Okna - czyli co dwa pliki to nie jeden}
+	\begin{block}{tworzenie nowego okna}<2->
+		CTRL+w n
+	\end{block}
+	\begin{block}{tworzenie nowego okna z~buforem z~aktywnego okna}<3->
+		CTRL+w s\\
+		CTRL+w v
+	\end{block}
+	\begin{block}{zamykanie okna}<4->
+		CTRL+w q\\
+		:q
+	\end{block}
+	\begin{block}{zamykanie wszystkich innych okien}<5->
+		CTRL+w o
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - obsługa}
+	\begin{block}{przechodzenie między oknami}<1->
+		CTRL+w h/j/k/l\\
+		CTRL+w \textit{strzałki}
+	\end{block}
+	\begin{block}{zmiana rozmiaru okna w~poziomie}<2->
+		CTRL+w \textless\\
+		CTRL+w \textgreater
+	\end{block}
+	\begin{block}{zmiana rozmiaru okna w~pionie}<3->
+		CTRL+w +\\
+		CTRL+w -
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - obsługa c.d.}
+	\begin{block}{przenoszenie okien na skrajne pozycje}<1->
+		CTRL+w H/J/K/L
+	\end{block}
+	\begin{block}{rotacja w~prawo/dół}<2->
+		CTRL+w r
+	\end{block}
+	\begin{block}{rotacja w~lewo/górę}<3->
+		CTRL+w R
+	\end{block}
+	\begin{block}{zamiana dwóch okien}<4->
+		CTRL+w x
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Okna - najlepsze na koniec}
+	\begin{block}{otwieranie okna z~pliku pod kursorem}<1->
+	CTRL+w f
+	\end{block}
+	\begin{block}{otwieranie okna z~elementem spod kursora}<2->
+	CTRL+w ]
+	\end{block}
+\end{frame}
+\subsection{Zakładki - czyli okna to za mało}
+\begin{frame}
+	\frametitle{Zakładki - czyli okna to za mało}
+	\begin{itemize}[<+->]
+	\item Bardziej widoki niż zakładki
+	\item Pozwalają efektywnie otworzyć więcej okien
+	\item Pozwalają grupować okna
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Zakładki - obsługa}
+	\begin{block}{tworzenie}<1->
+		:tabnew
+	\end{block}
+	\begin{block}{zamykanie}<2->
+		:tabclose
+	\end{block}
+	\begin{block}{lista}<3->
+	:tabs
+	\end{block}
+	\begin{block}{poruszanie się}<4->
+		\begin{itemize}
+			\uncover<5->
+			{ \item :tabnext }
+			\uncover<6->
+			{ \item :tabprev }
+			\uncover<7->
+			{ \item :tabfirst }
+			\uncover<8->
+			{ \item :tablast }
+		\end{itemize}
+	\end{block}
+\end{frame}
+\subsection{Sesje - czyli robimy przerwę na sen}
+\begin{frame}
+	\frametitle{Sesje - czyli robimy przerwę na sen}
+	\begin{block}{tworzenie}<1->
+	:mksession \textit{sesja}
+	\end{block}
+	\begin{block}{odtwarzanie}<2->
+	:source \textit{sesja}
+	\end{block}
+\end{frame}
+\begin{frame}
+	Dziękuję za uwagę
+\end{frame}
+\end{document}
