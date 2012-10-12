@@ -1,37 +1,48 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper, landscape, border shrink=5mm]
+\pgfpageslogicalpageoptions{1}{}
+\pgfpageslogicalpageoptions{2}{}
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{fullpage}
 \pagestyle{empty}
+\newcommand{\deklaracja}
+{
+	\begin{flushright}
+		\includegraphics[width=0.4\textwidth]{./../logo}
+	\end{flushright}
+	\vspace{-50pt}
+	Kraków, dn. \ldots\ldots\ldots 20.. r.\\
+	\begin{center}
+	\vspace{50pt}
+	\Large{\textbf{Deklaracja aktywności}}
+	\end{center}
+	\vspace{20pt}
+	Ja niżej podpisany podejmuje się wykonania następujących zadań w~roku akademickim \ldots\ldots\ldots/\ldots\ldots\ldots w~ramach członkostwa w~Kole Naukowym Informatyków \textbf{KERNEL}:\\
+	\begin{enumerate}
+	\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+	\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+	\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+	\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+	\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+	\end{enumerate}
+	\vspace{50pt}
+	\begin{flushright}
+	\normalsize
+	\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
+	\footnotesize (imie i~nazwisko)\\
+	\normalsize
+	\vspace{40pt}
+	\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
+	\footnotesize (podpis)\\
+	\end{flushright}
+	\normalsize
+}
 \begin{document}
-\begin{flushright}
-	\includegraphics[width=0.4\textwidth]{./../logo}
-\end{flushright}
-\vspace{-50pt}
-Kraków, dn. \ldots\ldots\ldots 20.. r.\\
-\begin{center}
-\vspace{50pt}
-\Large{\textbf{Deklaracja aktywności}}
-\end{center}
-\vspace{20pt}
-Ja niżej podpisany podejmuje się wykonania następujących zadań w~roku akademickim \ldots\ldots\ldots/\ldots\ldots\ldots w~ramach członkostwa w~Kole Naukowym Informatyków \textbf{KERNEL}:\\
-\begin{enumerate}
-\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
-\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
-\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
-\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
-\item \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
-\end{enumerate}
-\vspace{50pt}
-\begin{flushright}
-\normalsize
-\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-\footnotesize (imie i~nazwisko)\\
-\normalsize
-\vspace{40pt}
-\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-\footnotesize (podpis)\\
-\end{flushright}
+\deklaracja
+\newpage
+\deklaracja
 \end{document}
