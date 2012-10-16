@@ -1,5 +1,8 @@
-Wykłady:
-	Wstęp do VIM
-Deklaracje członkowskie
-Deklaracje aktywności
-Prezentacja koła
+
+
+Zrobione:
+	Wykłady:
+		Wstęp do VIM
+	Deklaracje członkowskie
+	Deklaracje aktywności
+	Prezentacja koła
