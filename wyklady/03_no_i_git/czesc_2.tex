@@ -106,12 +106,18 @@
 	RW+ testing = @users
 	\end{block}
 \end{frame}
-\subsection{Gałęzie prywatne}
+\subsection{Nazwy specjalne}
 \begin{frame}
-	\frametitle{Gałęzie prywatne}
+	\frametitle{Nazwy specjalne}
 	\begin{block}<1->
 	{dostęp do gałęzi przywatnych}
 	RW+ personal/USER/ = @users
+	\end{block}
+	\begin{block}<2->
+	{dostęp do konkretnych plików}
+	R NAME/read\_only\_file = user\\
+	- NAME/read\_only\_file = user\\
+	RW = user
 	\end{block}
 \end{frame}
 \end{document}
