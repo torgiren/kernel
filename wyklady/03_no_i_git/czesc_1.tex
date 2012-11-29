@@ -101,7 +101,7 @@
 	\end{block}
 \end{frame}
 \section{Podstawy II}
-\subsection{Rozgałęzianie}
+\subsection{Branching}
 \begin{frame}
 	\frametitle{Dwoimy się i~troimy}	
 	\begin{block}<1->
@@ -137,17 +137,54 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Co człowiek rozłączył, git niech złączy\ldots}
-	\begin{block}
+	\begin{block}<1->
 	{przechodzimy na gałąź do której chcemy dołączyć}
 	git checkout master
 	\end{block}
-	\begin{block}
+	\begin{block}<2->
 	{gałęzie\ldots łączcie się}
 	git merge galaz1
 	\end{block}
-	\begin{block}
+	\begin{block}<3->
 	{i~oto efekt}
 	cat plik
 	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Mergowanie}
+	Fast forward vs no\dywiz fast forward
+\end{frame}
+\begin{frame}
+	\frametitle{Gałęzie zdalne}
+	\begin{block}<1->
+	{``importowanie'' gałęzi zdalnych}
+	git checkout -t origin/galaz
+	\end{block}
+	\begin{block}<2->
+	{wysyłanie zmian do gałęzi zdalnej}
+	git push origin galaz:galaz
+	\end{block}
+	\begin{block}<3->
+	{usuwanie gałęzi zdalnej}
+	git push origin :galaz
+	\end{block}
+\end{frame}
+\section{Średnio-zaawansowanie}
+\begin{frame}
+	\frametitle{Tematy}
+		\begin{itemize}
+		\item git remote
+		\item git archive
+		\item git rebase
+		\item git revert
+		\item git stash
+		\item git tag
+		\item git clean
+		\item git log
+		\item git blame
+		\item git format-patch
+		\item git am
+		\item git bisect
+		\end{itemize}
 \end{frame}
 \end{document}
