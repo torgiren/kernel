@@ -1,0 +1,117 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\author{Marcin TORGiren Fabrykowski}
+\title{No i Git!\\część II}
+\institute{AGH - University of Science and Technology}
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\section{Instalacja}
+\subsection{Przygotowanie}
+\begin{frame}
+	\frametitle{Przygotowań krok pierwszy}
+	\begin{block}<1->
+	{tworzymy użytkownika}
+	sudo useradd -m git\\
+	sudo passwd git
+	\end{block}
+	\begin{block}<2->
+	{klucz do repo}	
+	scp .ssh/id\_rsa.pub git@localhost:me.pub
+	\end{block}
+\end{frame}
+\subsection{Instalacja}
+\begin{frame}
+	\frametitle{Instalacja}
+	\begin{block}
+	{logowanie}
+	ssh git@localhost
+	\end{block}
+	\begin{block}<2->
+	{klonujemy serwer}
+	git clone git://github.com/sitaramc/gitolite.git
+	\end{block}
+	\begin{block}<3->
+	{instalujemy}
+	gitolite/src/gitolite setup me.pub
+	\end{block}
+\end{frame}
+\section{Konfiguracja}
+\subsection{Konfiguracja}
+\begin{frame}
+	\frametitle{Konfiguracja}	
+	\begin{block}<1->
+	{repozytorium konfiguracyjne}
+	git clone git@localhost:gitolite-admin.git
+	\end{block}
+	\begin{block}<2->
+	{klucze}
+	gitolite-admin/keydir
+	\end{block}
+	\begin{block}<3->
+	{konfiguracja}
+	conf/gitolite.conf
+	\end{block}
+\end{frame}
+\section{gitolite.conf}
+\subsection{Prawa dostępu}
+\begin{frame}
+	\frametitle{gitolite.conf}
+	\begin{block}<1->
+	{skladnia}
+	każdy widzi :P
+	\end{block}
+	\begin{block}<2->
+	{prawa dostępu}
+	-\\
+	R\\
+	RW\\
+	RW+
+	\end{block}
+\end{frame}
+\subsection{Prawa dla gałęzi}
+\begin{frame}
+	\frametitle{HAHA, jesteśmy panami repo}
+	\begin{block}<1->
+	{odmówimy dostępu do repo}
+	repo prywatne\\
+	\ \ \ \ - = badguy\\
+	\ \ \ \ RW+ = me
+	\end{block}
+	\begin{block}<2->
+	{prawa do galezi}\
+	R master = user1 user2 user3\\
+	- master = user1 user2 user3\\
+	RW+ = admin1 admin2 admin2\\
+	RW+ testing = user1 user2 user3 admin1 admin2 admin3
+	\end{block}
+\end{frame}
+\subsection{Grupy}
+\begin{frame}
+	\frametitle{Grupujemy się}	
+	\begin{block}<1->
+	{tworzymy grupy}
+	@users = user1 user2 user3\\
+	@admins = admin1 admin2 admin3\\
+	@team1 = @users admin1
+	\end{block}
+	\begin{block}<2->
+	{przykład z poprzedniego slajdu, ale z grupami}
+	R master = @users\\
+	- master = @users\\
+	RW+ = @admins\\
+	RW+ testing = @users
+	\end{block}
+\end{frame}
+\subsection{Gałęzie prywatne}
+\begin{frame}
+	\frametitle{Gałęzie prywatne}
+	\begin{block}<1->
+	{dostęp do gałęzi przywatnych}
+	RW+ personal/USER/ = @users
+	\end{block}
+\end{frame}
+\end{document}
