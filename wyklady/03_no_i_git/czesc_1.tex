@@ -1,0 +1,190 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\author{Marcin TORGiren Fabrykowski}
+\title{No i Git!\\część I}
+\institute{AGH - University of Science and Technology}
+\usetheme{Warsaw}
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\section{Trochę teorii}
+	\subsection{Definicja}
+		\begin{frame}
+			\frametitle{System kontroli wersji}
+			\begin{block}<1->
+				{główne zadanie}
+				kontrola i~zachowywanie wszystkich wersji kontrolowanych plików
+			\end{block}
+			\begin{block}<2->
+				{zadania dodatkowe}
+				\begin{itemize}
+					\item<3-> wielu użytkowników
+					\item<4-> rozwijanie w~różnych kierunkach
+					\item<5-> backup
+				\end{itemize}
+			\end{block}
+		\end{frame}
+	\subsection{Podział}
+		\begin{frame}
+			\frametitle{Podział}	
+			\begin{block}<1->
+			{lokacja}
+			\begin{itemize}
+				\item<2-> scentralizowane
+				\item<3-> rozproszone
+			\end{itemize}
+			\end{block}
+			\begin{block}<4->
+			{przechowywanie wersji}
+			\begin{itemize}
+				\item<5-> jako zmiany
+				\item<6-> jako snapshoty
+			\end{itemize}
+			\end{block}
+		\end{frame}
+\section{Podstawy}
+\subsection{Pierwsze kroki}
+\begin{frame}
+	\frametitle{Pierwszy commit}	
+	\begin{block}<1->
+	{klonujemy repozytorium}
+		git clone git@192.168.246.133:first.git
+	\end{block}
+	\begin{block}<2->
+	{praca nad projektem}
+	vim plik 
+	\end{block}
+	\begin{block}<3->
+	{dodanie pliku}
+	git add plik
+	\end{block}
+	\begin{block}<4->
+	{commit}
+	git commit -m ``tresc commita''
+	\end{block}
+	\begin{block}<5->
+	{wysalanie}
+	git push origin master
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Uproszczony schemat pracy}
+	\begin{block}<1->
+	{pobranie danych z~serwera}
+	git fetch
+	\end{block}
+	\begin{block}<2->
+	{mergowanie zmian}
+	git merge origin/master
+	\end{block}
+	\begin{block}<3->
+	{praca nad plikiem}
+	vim plik\\
+	git add plik\\
+	git commit -m ``opis''\\
+	git push origin
+	\end{block}
+\end{frame}
+\subsection{Trochę ogłady}
+\begin{frame}
+	\frametitle{Podstawowa konfiguracja}
+	\begin{block}<1->
+	{przedstawiamy się}
+	git config -{}-global user.name ``Jan Kowalski''\\
+	git config -{}-global user.email ``moj@email.pl''
+	\end{block}
+	\begin{block}<2->
+	{cenimy sobie komfort pracy}
+	git config -{}-global core.editor vim
+	\end{block}
+\end{frame}
+\section{Podstawy II}
+\subsection{Branching}
+\begin{frame}
+	\frametitle{Dwoimy się i~troimy}	
+	\begin{block}<1->
+	{tworzymy gałąź}
+	git branch galaz1
+	\end{block}
+	\begin{block}<2->
+	{przełączamy się}
+	git checkout galaz1
+	\end{block}
+	\begin{block}<3->
+	{normalna praca}
+	vim plik\\
+	git add plik\\
+	git commit -m ``opis''
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Czas na magię\ldots}
+	\begin{block}<1->
+	{przechodzimy na gałąź główną}
+	git checkout master
+	\end{block}
+	\begin{block}<2->
+	{owoc naszych prac\ldots}
+	cat plik
+	\end{block}
+	\begin{block}<3->
+	{wracamy na galaz1}
+	git checkout galaz1\\
+	cat plik
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Co człowiek rozłączył, git niech złączy\ldots}
+	\begin{block}<1->
+	{przechodzimy na gałąź do której chcemy dołączyć}
+	git checkout master
+	\end{block}
+	\begin{block}<2->
+	{gałęzie\ldots łączcie się}
+	git merge galaz1
+	\end{block}
+	\begin{block}<3->
+	{i~oto efekt}
+	cat plik
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Mergowanie}
+	Fast forward vs no\dywiz fast forward
+\end{frame}
+\begin{frame}
+	\frametitle{Gałęzie zdalne}
+	\begin{block}<1->
+	{``importowanie'' gałęzi zdalnych}
+	git checkout -t origin/galaz
+	\end{block}
+	\begin{block}<2->
+	{wysyłanie zmian do gałęzi zdalnej}
+	git push origin galaz:galaz
+	\end{block}
+	\begin{block}<3->
+	{usuwanie gałęzi zdalnej}
+	git push origin :galaz
+	\end{block}
+\end{frame}
+\section{Średnio-zaawansowanie}
+\begin{frame}
+	\frametitle{Tematy}
+		\begin{itemize}
+		\item git remote
+		\item git archive
+		\item git rebase
+		\item git revert
+		\item git stash
+		\item git tag
+		\item git clean
+		\item git log
+		\item git blame
+		\item git format-patch
+		\item git am
+		\item git bisect
+		\end{itemize}
+\end{frame}
+\end{document}
